@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ViralTitle AI – Free YouTube Title Generator</title>
+  <meta name="description" content="Generate viral YouTube titles instantly using AI. Perfect for creators, marketers, vloggers, and shorts.">
+  <meta name="keywords" content="YouTube title generator, viral titles, AI tools, free content tool">
+  <meta name="author" content="@rhitect">
+  <link rel="icon" href="favicon.ico" />
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 font-sans">
+  <div class="max-w-2xl mx-auto py-12 px-4">
+    <h1 class="text-3xl font-bold text-center mb-4">🎯 ViralTitle AI</h1>
+    <p class="text-center text-gray-600 mb-6">Generate viral YouTube titles instantly using AI. 100% free, no login.</p>
+    
+    <div class="bg-white p-6 rounded-lg shadow-md">
+      <label for="idea" class="block font-semibold mb-2">Enter your video idea:</label>
+      <textarea id="idea" rows="4" class="w-full p-2 border rounded mb-4" placeholder="Example: How I grew my YouTube channel in 30 days"></textarea>
+      
+      <button onclick="generateTitles()" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 w-full">Generate Titles</button>
+    </div>
+
+    <div id="results" class="mt-8 hidden">
+      <h2 class="text-xl font-bold mb-2">Generated Titles:</h2>
+      <ul id="titleList" class="space-y-2 text-gray-800"></ul>
+    </div>
+    
+    <footer class="mt-10 text-center text-sm text-gray-400">
+      Built with 💡 by <a href="https://github.com/rhitect" class="underline">@rhitect</a> · Powered by OpenAI
+    </footer>
+  </div>
+
+  <script>
+    async function generateTitles() {
+      const idea = document.getElementById('idea').value.trim();
+      if (!idea) return alert('Please enter a video idea.');
+
+      const response = await fetch('/generate', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ idea })
+      });
+      
+      const data = await response.json();
+      const titleList = document.getElementById('titleList');
+      titleList.innerHTML = '';
+      
+      if (data && data.titles) {
+        data.titles.forEach(title => {
+          const li = document.createElement('li');
+          li.textContent = title;
+          titleList.appendChild(li);
+        });
+        document.getElementById('results').classList.remove('hidden');
+      } else {
+        alert('Something went wrong. Try again.');
+      }
+    }
+  </script>
+</body>
+</html>
