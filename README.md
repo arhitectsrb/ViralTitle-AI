@@ -1,60 +1,26 @@
 # 🔥 ViralTitle AI
 
-Free AI-powered tool for generating viral YouTube titles, hooks, and CTA lines in seconds.
-
-🎯 Built for creators, marketers, vloggers, and shorts editors who want to grow fast.
-
----
+Generate high-converting YouTube titles using AI trained on viral content patterns.  
+No signup, instant results – perfect for creators and marketers.
 
 ## 🚀 Features
 
-- ✍️ Generate 3 titles per idea, instantly
-- 🎯 Optimized for click-through rate (CTR)
-- 🔓 Optional PRO unlock with special access code
-- 🌍 100% free, no sign-up, hosted online
+- Generate 3 viral YouTube titles per idea
+- Simple UI, fast API response
+- Built with Node.js + OpenAI API
 
----
+## 🛠️ Setup
 
-## 🛠️ How It Works
+1. Clone the repo
+2. Run `npm install`
+3. Create a `.env` file with:
+   ```env
+   OPENAI_API_KEY=your_key_here
+   ```
+4. Start server:
+   ```bash
+   node server.js
+   ```
 
-1. Enter your video topic
-2. Click "Generate"
-3. Copy-paste the title that fits your content
-
----
-
-## 🧠 Powered by
-
-- OpenAI GPT model
-- Vercel (free hosting)
-- HTML + JS + TailwindCSS frontend
-
----
-
-## 📦 PRO Access (Optional)
-
-Want unlimited generations?
-
-1. Get your PRO code here: [https://your-gumroad-link](#)
-2. Paste it into the unlock field
-3. Enjoy unlimited access
-
----
-
-## 📜 License
-
-MIT – free to use, modify, and share.
-
-Created by [@rhitect](https://github.com/rhitect)
-
----
-
-## 🙌 Contribute
-
-If you'd like to improve this tool, feel free to fork it, add features, and submit a PR.
-
----
-
-## 🌐 Live Demo
-
-👉 [https://viraltitle-ai.vercel.app](https://viraltitle-ai.vercel.app)
+## 🧠 Author
+Built by [@rhitect](https://github.com/rhitect)
