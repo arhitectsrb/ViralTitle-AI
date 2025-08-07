@@ -1,0 +1,8 @@
+ViralTitleAI/
+├── .gitignore         ✅ ← Ovaj fajl ovde
+├── .env               ❌ Ne ide na GitHub! (ali se koristi lokalno)
+├── server.js
+├── README.md
+├── LICENSE
+├── public/
+│   └── index.html
